@@ -12,9 +12,9 @@ n = carry(n, b);
 lm = length(m);
 ln = length(n);
 if lm < ln
-    cmp = -1;
+    cmp = 'l';
 elseif lm > ln
-    cmp = 1;
+    cmp = 'm';
 else
     % same length, check digits in reverse order
     k = lm; % doesn't matter if ln or lm, as they're equal...
@@ -25,11 +25,11 @@ else
     end
     
     if k==0
-        cmp = 0;
+        cmp = 'e';
     elseif m(k) < n(k)
-        cmp = -1;
+        cmp = 'l';
     elseif m(k) > n(k)
-        cmp = 1;
+        cmp = 'm';
     end
 
 end

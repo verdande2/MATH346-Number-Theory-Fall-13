@@ -7,10 +7,10 @@ k = 1; % index pointer
 flag = true; % termination condition
 while flag
     % division algorithm coefficients
-    q = mod(n(k), b);
-    r = floor(n(k) / b);
+    r = mod(n(k), b);
+    q = floor(n(k) / b);
     
-    if r>0
+    if q ~= 0
         % if there is a positive carry
         
         % do we need to resize n to accomodate the carry?
@@ -20,19 +20,19 @@ while flag
         end
         
         % add the carry to the next biggest coefficient
-        n(k+1) = n(k+1) + r;
+        n(k+1) = n(k+1) + q;
         
         % update the current coefficient to the mod (after the carry has
         % been removed)
-        n(k) = q;
-    elseif r<0
+        n(k) = r;
+    %elseif q<0
         % if there is a negative carry (ie. backwards)
-        error('Carry:NegativeCoefficient', 'Negative Coefficient Detected')
+        %error('Carry:NegativeCoefficient', 'Negative Coefficient Detected')
     end
     
     % if we're on the last element of n and there is no carry, terminate
     % loop
-    if(k==l && r==0)
+    if(k==l && q==0)
         flag = false;
     end
     
@@ -43,7 +43,7 @@ end
 
 % remove any leading zeros (must be last step, due to perhaps creating more
 % in the process of carrying negatives over)
-while(n(length(n))==0)
+while(length(n) > 1 && n(length(n))==0)
     n = n(1:length(n)-1);
 end
 

@@ -1,4 +1,4 @@
-function [ a ] = BigAdd( m, n, b )
+function [ a ] = BigMult( m, n, b )
 % m: first number
 % n: second number
 % b: base
@@ -16,6 +16,6 @@ for i=1:length(a)
     end
 end
 
-%a = carry(a, b);
+a = carry(a, b);
 end
 
