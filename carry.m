@@ -6,9 +6,11 @@ k = 1; % index pointer
 
 flag = true; % termination condition
 while flag
+    DEBUG_current_value = n(k);
+    
     % division algorithm coefficients
-    r = mod(n(k), b);
     q = floor(n(k) / b);
+    r = mod(n(k), b);
     
     if q ~= 0
         % if there is a positive carry
@@ -30,16 +32,27 @@ while flag
         %error('Carry:NegativeCoefficient', 'Negative Coefficient Detected')
     end
     
-    % if we're on the last element of n and there is no carry, terminate
-    % loop
-    if(k==l && q==0)
+    
+%     % if we're on the last element of n and there is no carry, terminate
+%     % loop
+%     if(k==l && q==0)
+%         flag = false;
+%     end
+    % if we're on the last element of n
+    if(k==l)
         flag = false;
     end
     
     k = k+1; % manual increment
 end
-    
-% make sure the data is proper form (no negative coefficients) NO.
+
+% TEST SECTION
+if n(l) < 0
+    n = -carry(-n, b);
+    l = length(n);
+end
+% make sure the data is proper form (either ALL or NO negative coefficients ie. ALL => negative number, NONE => positive number)
+
 
 % remove any leading zeros (must be last step, due to perhaps creating more
 % in the process of carrying negatives over)
@@ -47,24 +60,6 @@ while(length(n) > 1 && n(length(n))==0)
     n = n(1:length(n)-1);
 end
 
-
-% for k = 1:l-1
-%     % take the carry over
-%     n(k+1) = n(k+1) + floor(n(k) / b);
-%     
-%     % mod the current entry
-%     n(k) = mod(n(k), b);
-% end
-
-% % for last entry
-% last = length(n);
-% if(n(last) > b)
-%     % take the carry over
-%     n(last+1) = floor(n(last) / b);
-%     
-%     % mod the current entry
-%     n(last) = mod(n(last), b);
-% end
 
 
 
