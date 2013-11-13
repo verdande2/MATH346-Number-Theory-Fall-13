@@ -1,10 +1,11 @@
 profile on
-%a = [27 0 1];
-%b = [3 7 0];
-%z = [0];
-%z = carry(z, 10);
-%a = carry(a, 10);
-%b = carry(b, 10);
+
+
+
+
+asserteq(carry([0], 10), [0], 'zero test case failed')
+%assert(prod(carry([3 7 0], 10) == [3 7]), 'removal of leading zeros test failed')
+%assert(prod(carry([27 0 1], 10) == [7 2 1]), 'simple carry test failed')
 %t = [-1 -2 -3 8];
 %carry(t, 10)
 
