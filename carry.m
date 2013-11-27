@@ -15,12 +15,15 @@ while flag
     if q ~= 0
         % if there is a positive carry
         
-        % do we need to resize n to accomodate the carry?
+        % are we on the last element of n?
         if k==l
-            n = [n 0]; % append a zero to the end of the number
-            l = l+1; % update the length
+            if q<0 % if it is negative, we want to break out of this loop and let the n=-carry(-n, b) bit below to handle if -n(k)>b (ie. it needs to carry/resize, etc)
+                break
+            else
+                n = [n 0]; % append a zero to the end of the number
+                l = l+1; % update the length
+            end
         end
-        
         % add the carry to the next biggest coefficient
         n(k+1) = n(k+1) + q;
         

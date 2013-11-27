@@ -40,27 +40,27 @@ end
 
 
 % better pseudo code
-q = 0
-while n > d
-    k = 0
-    while n[end-k:end] < d % last k elements of n (first k digits)
-        k++
-    end
-    guess_numer = n[end-k:end]
-    guess_denom = d
-    
-    invalid = true
-    while invalid = true
-        invalid = true
-        check if guess*d is > guess_numer
-            if so, lower guess
-        check if guess = 0
-            if so, 
-                k++
-                recalc guess_numer
-                
-        if guess ~= 0 && guess*d < guess_numer
-            invalid = false
-        end
-    
-    
+% q = 0
+% while n > d
+%     k = 0
+%     while n[end-k:end] < d % last k elements of n (first k digits)
+%         k++
+%     end
+%     guess_numer = n[end-k:end]
+%     guess_denom = d
+%     
+%     invalid = true
+%     while invalid = true
+%         invalid = true
+%         check if guess*d is > guess_numer
+%             if so, lower guess
+%         check if guess = 0
+%             if so, 
+%                 k++
+%                 recalc guess_numer
+%                 
+%         if guess ~= 0 && guess*d < guess_numer
+%             invalid = false
+%         end
+%     
+%     
