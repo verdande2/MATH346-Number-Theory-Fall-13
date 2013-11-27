@@ -3,10 +3,11 @@ function [ q, n ] = BigDiv2( n, d, b )
 % d: divisor
 % b: base
 
-ln = length(n);
-ld = length(d);
 
 while BigComp(n, d, b) == 'm'
+    
+    ln = length(n);
+    ld = length(d);
     guess = floor(n(ln)/d(ld));
     
     if guess==0
@@ -24,7 +25,6 @@ while BigComp(n, d, b) == 'm'
     end
     
     n = BigAdd(n, -sub, b);
-    
     n = carry(n, b);
     
     q(ln-ld+1) = guess;
