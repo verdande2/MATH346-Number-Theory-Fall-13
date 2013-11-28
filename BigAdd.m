@@ -16,6 +16,6 @@ for i=1:length(a)
     end
 end
 
-%a = carry(a, b);
+a = carry(a, b); % fix a before returning
 end
 

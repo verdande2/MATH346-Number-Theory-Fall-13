@@ -56,8 +56,10 @@ asserteq(   carry([-1 -2 -3 -4 -5], 10),[-1 -2 -3 -4 -5],   'No carry needed for
 %     n = BigAdd(n, 1);
 %     BigGCD(BigAdd(n,-1, 10), n, 10)
 % end
-BigGCD([2 6 7], [8 1 6], 10)
-BigGCD([1 1 1], [9 6], 10)
+%BigGCD([2 6 7], [8 1 6], 10)
+%BigGCD([1 1 1], [9 6], 10)
+
+BigPrime(2, 10)
     
 %BigExp(n, d)
 %BigAdd(z, z, 10)

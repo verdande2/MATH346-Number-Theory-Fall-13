@@ -6,15 +6,10 @@ function [ a ] = BigMult( m, n, b )
 lm = length(m);
 ln = length(n);
 
-a = zeros(1, max(lm, ln));
-for i=1:length(a)
-    if(i<=lm)
-        a(i) = a(i) + m(i);
-    end
-    if(i<=ln)
-        a(i) = a(i) + n(i);
-    end
-end
+a = zeros(1, 2*max(lm, ln)-1);
+
+% implement me!
+
 
 a = carry(a, b);
 end

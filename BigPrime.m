@@ -3,7 +3,6 @@ function [ p ] = BigPrime( n, b )
 % b:    base
     p_check_max = 50;
 
-    prob_not_prime = 1;
     prime = false;
 
     
@@ -13,36 +12,43 @@ function [ p ] = BigPrime( n, b )
     fprintf('Checking the first %d primes <= %d...\n' ,length(p_list), p_check_max)
 
     while prime == false
+        prob_not_prime = 1;
         p = floor(b*rand(1, n)); % shouldn't need to carry this, as all digits generated are between 0-(b-1)
 
-        % debug fix
-        x = 0;
-        for i = 1:length(p)
-            x = b*x + p(i);
+        % if the most significant digit is a zero, it will be truncated, so
+        % ensure it is nonzero
+        while p(length(p)) == 0
+            p(length(p)) = floor(b*rand(1,1));
         end
-        p = x; 
+        
+        % debug fix
+%         x = 0;
+%         for i = 1:length(p)
+%             x = b*x + p(i);
+%         end
+%         p = x; 
             
         
-        % add p adjustments here if wanted (I don't think I care to do
-        % this, as it just does a mod and add, whereas mine just fails
-        % through and generates another random number to try
-        
-        i = 1; % reset index in p_list
+        % add p adjustments here if wanted 
+        a = 1;
+        for i = 1 : 6 % first 6 primes 2, 3, 5, 7, 11, 13
+            if BigMod(p, p_list(i), b) == 0
+                p = BigAdd(p, a, b);
+                p = carry(p, b);
+            end
+            a = a*p_list(i);
+        end
         
         prime = true; % assume p is prime initially
         while prime == true % working under the assumption p is prime until failing Fermat's test
-            check_prime = p_list(i);
-            test_prime = p;
+            % perform the Fermat primality test
             
-            if i==lp % we've hit the max amount of primes we're testing against in Fermat's
-                break
-            elseif p<p_list(i)
-                break % our check prime has exceeded our test prime
-            end
-            
-            m = mod(p^(p_list(i)-1), p_list(i));
+            % pick a random integer in [1, n-1]
+            a = ceil(rand(1,1) * BigAdd(p, -1, b));
+            a = carry(a, b); % fix a if needed
+            m = BigExp(a, BigAdd(p, -1, b), p, b);
+            % m = a^(p-1) mod p
             if m == 1
-            %if BigMod(BigExp(p, p_list(i)-1, p_list(i), b), p_list(i), b) == 1
                 % passes Fermat test!
                 prob_not_prime = prob_not_prime/2; % further reduces the chance of p being composite
             else
@@ -52,13 +58,18 @@ function [ p ] = BigPrime( n, b )
 
             prob_prime = 1 - prob_not_prime;
 
-            fprintf('Prime Candidate: %d (chance of primality: %0.8f\n', p, prob_prime)
-
-            i = i+1;
+            fprintf('Prime Candidate: ')
+            BigPrint(p);
+            fprintf('(chance of primality: %0.8f\n', prob_prime)
 
         end
         % if execution reaches this line and prime is still true, we're
         % prob_prime probability that p is prime! good to go!
+        
+        if prime && length(p) ~= n
+            fprintf('NOTE: Requested prime of length %d, received prime of length %d', n, length(p))
+        end
+        
     end
 
 end
