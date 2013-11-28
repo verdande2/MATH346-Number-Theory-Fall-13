@@ -59,8 +59,24 @@ asserteq(   carry([-1 -2 -3 -4 -5], 10),[-1 -2 -3 -4 -5],   'No carry needed for
 %BigGCD([2 6 7], [8 1 6], 10)
 %BigGCD([1 1 1], [9 6], 10)
 
-BigPrime(2, 10)
-    
+%BigPrime(2, 10)
+
+BigExp([7 6], [8 7], [9 7], 10)
+%BigMod(Int2BigInt(123456789,10), Int2BigInt(123456, 10), 10)
+
+% a = [0 3];
+% p = [1 4];
+% p1 = BigAdd(p,-1,10);
+% 
+% BigExp(a, p1, p, 10)
+%asserteq(BigExp(a, BigAdd(p,-1,10), p, 10), 1, 'big exp fails!')
+
+%[q,r]=BigDiv(2,2,10)
+
+%BigMult(Int2BigInt(123,10), Int2BigInt(123, 10), 10) % = [9 2 1 5 1]
+
+%BigMult(Int2BigInt(123,10), Int2BigInt(56, 10), 10) % = 6888, or [8 8 8 6]
+
 %BigExp(n, d)
 %BigAdd(z, z, 10)
 %carry([27], 10) 

@@ -36,7 +36,7 @@ function [ p ] = BigPrime( n, b )
                 p = BigAdd(p, a, b);
                 p = carry(p, b);
             end
-            a = a*p_list(i);
+            a = BigMult(a,p_list(i),10);
         end
         
         prime = true; % assume p is prime initially

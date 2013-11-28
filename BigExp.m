@@ -3,6 +3,7 @@ function [ a ] = BigExp( m, c, N, b )
 % ascending powers of b
 
 a = 1; 
+a = m;
 while BigComp(c, 0, b) ~= 'e' % while c != 0
     [q, r] = BigDiv(c, 2, b); % c/2 returns floor and remainder
     c = q;
@@ -11,7 +12,7 @@ while BigComp(c, 0, b) ~= 'e' % while c != 0
         a = BigMod(a, N, b); % ans = mod(ans, N)
     end
     if BigComp(c, 0, b) ~= 'e' % if c~=0
-        m = BigMult(m, m, b); % m *= m
+        m = BigMult(m, m, b); % m = m^2 power of 2 part here
         m = BigMod(m, N, b); % m = mod(m, N)
     end
     
