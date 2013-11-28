@@ -12,9 +12,13 @@ function [ q, r ] = BigDiv( n, d, b )
             ld = length(d);
             guess = floor(n(ln)/d(ld));
 
-            if guess==0
-                guess = floor((n(ln)*b +n(ln-1))/d(ld));
+            digits = 1;
+            
+            % guessing is a pain in the ass
+            while guess==0
+                [guess, r] = BigDiv(n(end-digits+1:end), d, b);
                 ln = ln - 1;
+                digits = digits + 1;
             end
 
 
