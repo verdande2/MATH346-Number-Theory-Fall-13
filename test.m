@@ -29,8 +29,10 @@ asserteq(   carry([-1 -2 -3 -4 -5], 10),[-1 -2 -3 -4 -5],   'No carry needed for
 %n = [9 8 0 9 7];
 %d = [1 3 2];
 
-n = [3 7 2 5 6 1];
-d = [6 1 3];
+%n = [3 7 2 5 6 1];
+%d = [6 1 3];
+%165273/316 = 523 r5
+%[q, r] = BigDiv(n,d,10)
 
 
 %n = [1 2 3 4];
@@ -42,14 +44,21 @@ d = [6 1 3];
 %d = [1 1 2];
 %2465/211 = 11 r144
 
-n = Int2BigInt(1027, 10);
-d = Int2BigInt(2, 10);
+%n = Int2BigInt(1027, 10);
+%d = Int2BigInt(2, 10);
 %1027/2 = 513 r1
-BigComp(n,d,10)
-[q, r]=BigDiv2(n,d,10)
+%BigComp(n,d,10)
+%[q, r]=BigDiv(n,d,10)
 
-
-
+%[k, l] = BigEuclid([2 6 7], [8 1 6], 10)
+%[k, l] = BigEuclid([1 1 1], [9 6], 10)
+% for i = 1 : 10^6
+%     n = BigAdd(n, 1);
+%     BigGCD(BigAdd(n,-1, 10), n, 10)
+% end
+BigGCD([2 6 7], [8 1 6], 10)
+BigGCD([1 1 1], [9 6], 10)
+    
 %BigExp(n, d)
 %BigAdd(z, z, 10)
 %carry([27], 10) 

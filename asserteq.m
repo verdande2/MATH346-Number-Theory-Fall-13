@@ -3,10 +3,10 @@ function [ ] = asserteq(a, b, msg)
 %     if isscalar(pass)
 %         % do nothing
 %     elseif isvector(pass)
-%         pass = prod(pass);
+%         pass = all(pass);
 %     else
 %         error('a and b must be scalars or vectors only')
 %     end
 %     assert(pass, msg)
-    assert(prod(a==b)==1, msg)
+    assert(isequal(a,b), msg)
 end
