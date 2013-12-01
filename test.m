@@ -61,7 +61,9 @@ asserteq(   carry([-1 -2 -3 -4 -5], 10),[-1 -2 -3 -4 -5],   'No carry needed for
 
 %BigPrime(2, 10)
 
-BigExp([7 6], [8 7], [9 7], 10)
+[q,r]=BigDiv(Int2BigInt(654321, 10), Int2BigInt(123, 10), 10)
+
+%BigExp([7 6], [8 7], [9 7], 10)
 %BigMod(Int2BigInt(123456789,10), Int2BigInt(123456, 10), 10)
 
 % a = [0 3];

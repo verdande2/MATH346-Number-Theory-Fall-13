@@ -1,6 +1,6 @@
 function [ n ] = Int2BigInt( i, b )
-%UNTITLED2 Summary of this function goes here
-%   Detailed explanation goes here
+% i: integer (up to intmax in matlab) to convert to bigint
+% b: desired base for bignum
 n = [];
 
 while i ~= 0
