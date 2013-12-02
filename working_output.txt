@@ -1,0 +1,288 @@
+Seeking a big prime 8-digits long in base 95 with certainty 0.99902344 (10 primality test trials)...
+Checking the first 25 primes <= 100...
+Random p:
+p = 49 4 11 29 49 94 45 36 
+After fixing leading zeros of p
+p = 49 4 11 29 49 94 45 36 
+Now checking if p is divisible by 2
+Now checking if p is divisible by 3
+p is divisible by 3!
+Adding a to p to correct! a = 2 
+New p: p = 51 4 11 29 49 94 45 36 
+Now checking if p is divisible by 5
+Now checking if p is divisible by 7
+Now checking if p is divisible by 11
+Now checking if p is divisible by 13
+Now checking if p is divisible by 17
+Now checking if p is divisible by 19
+Now checking if p is divisible by 23
+Now checking if p is divisible by 29
+Now checking if p is divisible by 31
+Now checking if p is divisible by 37
+Now checking if p is divisible by 41
+Now checking if p is divisible by 43
+Now checking if p is divisible by 47
+Now checking if p is divisible by 53
+Now checking if p is divisible by 59
+Now checking if p is divisible by 61
+Now checking if p is divisible by 67
+Now checking if p is divisible by 71
+Now checking if p is divisible by 73
+Now checking if p is divisible by 79
+Now checking if p is divisible by 83
+Now checking if p is divisible by 89
+Now checking if p is divisible by 97
+Now beginning primality tests...
+Fermat test with a = 24 3 6 15 23 44 22 18 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 51 4 11 29 49 94 45 36 
+(current chance of primality: 0.50000000)
+Fermat test with a = 32 4 8 19 32 59 29 24 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 51 4 11 29 49 94 45 36 
+(current chance of primality: 0.75000000)
+Fermat test with a = 6 2 3 4 6 10 6 5 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 51 4 11 29 49 94 45 36 
+(current chance of primality: 0.87500000)
+Fermat test with a = 13 2 4 8 13 23 12 10 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 51 4 11 29 49 94 45 36 
+(current chance of primality: 0.93750000)
+Fermat test with a = 48 5 12 29 48 90 44 35 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 51 4 11 29 49 94 45 36 
+(current chance of primality: 0.96875000)
+Fermat test with a = 37 4 9 22 36 68 33 27 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 51 4 11 29 49 94 45 36 
+(current chance of primality: 0.98437500)
+Fermat test with a = 8 2 3 6 8 15 8 7 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 51 4 11 29 49 94 45 36 
+(current chance of primality: 0.99218750)
+Fermat test with a = 45 5 11 27 44 83 40 33 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 51 4 11 29 49 94 45 36 
+(current chance of primality: 0.99609375)
+Fermat test with a = 36 4 9 22 35 66 33 26 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 51 4 11 29 49 94 45 36 
+(current chance of primality: 0.99804688)
+Fermat test with a = 44 5 11 26 44 82 40 32 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 51 4 11 29 49 94 45 36 
+(current chance of primality: 0.99902344)
+Passed all primality tests!
+Seeking a big prime 8-digits long in base 95 with certainty 0.99902344 (10 primality test trials)...
+Checking the first 25 primes <= 100...
+Random p:
+p = 61 10 38 19 82 85 4 70 
+After fixing leading zeros of p
+p = 61 10 38 19 82 85 4 70 
+Now checking if p is divisible by 2
+Now checking if p is divisible by 3
+Now checking if p is divisible by 5
+Now checking if p is divisible by 7
+Now checking if p is divisible by 11
+Now checking if p is divisible by 13
+Now checking if p is divisible by 17
+Now checking if p is divisible by 19
+Now checking if p is divisible by 23
+Now checking if p is divisible by 29
+Now checking if p is divisible by 31
+Now checking if p is divisible by 37
+Now checking if p is divisible by 41
+Now checking if p is divisible by 43
+Now checking if p is divisible by 47
+Now checking if p is divisible by 53
+Now checking if p is divisible by 59
+Now checking if p is divisible by 61
+Now checking if p is divisible by 67
+Now checking if p is divisible by 71
+Now checking if p is divisible by 73
+Now checking if p is divisible by 79
+Now checking if p is divisible by 83
+Now checking if p is divisible by 89
+Now checking if p is divisible by 97
+Now beginning primality tests...
+Fermat test with a = 44 9 28 15 59 61 4 51 
+Result of Fermat test (a^(p-1) mod p) = 79
+Result of Fermat test (a^(p-1) mod p) = 37
+Result of Fermat test (a^(p-1) mod p) = 74
+Result of Fermat test (a^(p-1) mod p) = 39
+Result of Fermat test (a^(p-1) mod p) = 67
+Result of Fermat test (a^(p-1) mod p) = 16
+Result of Fermat test (a^(p-1) mod p) = 19
+Result of Fermat test (a^(p-1) mod p) = 48
+Prime Candidate p = 61 10 38 19 82 85 4 70 
+(current chance of primality: 0.00000000)
+p failed one or more Fermat tests. Rerolling a new p...
+Random p:
+p = 13 19 93 36 41 92 88 67 
+After fixing leading zeros of p
+p = 13 19 93 36 41 92 88 67 
+Now checking if p is divisible by 2
+Now checking if p is divisible by 3
+p is divisible by 3!
+Adding a to p to correct! a = 2 
+New p: p = 15 19 93 36 41 92 88 67 
+Now checking if p is divisible by 5
+p is divisible by 5!
+Adding a to p to correct! a = 6 
+New p: p = 21 19 93 36 41 92 88 67 
+Now checking if p is divisible by 7
+Now checking if p is divisible by 11
+Now checking if p is divisible by 13
+Now checking if p is divisible by 17
+Now checking if p is divisible by 19
+Now checking if p is divisible by 23
+Now checking if p is divisible by 29
+Now checking if p is divisible by 31
+Now checking if p is divisible by 37
+Now checking if p is divisible by 41
+p is divisible by 41!
+Adding a to p to correct! a = 0 58 67 18 2 9 10 
+New p: p = 21 77 65 55 43 6 4 68 
+Now checking if p is divisible by 43
+Now checking if p is divisible by 47
+Now checking if p is divisible by 53
+Now checking if p is divisible by 59
+Now checking if p is divisible by 61
+Now checking if p is divisible by 67
+Now checking if p is divisible by 71
+Now checking if p is divisible by 73
+Now checking if p is divisible by 79
+Now checking if p is divisible by 83
+Now checking if p is divisible by 89
+Now checking if p is divisible by 97
+Now beginning primality tests...
+Fermat test with a = 8 25 22 19 15 3 3 23 
+Result of Fermat test (a^(p-1) mod p) = 54
+Result of Fermat test (a^(p-1) mod p) = 55
+Result of Fermat test (a^(p-1) mod p) = 61
+Result of Fermat test (a^(p-1) mod p) = 17
+Result of Fermat test (a^(p-1) mod p) = 30
+Result of Fermat test (a^(p-1) mod p) = 5
+Result of Fermat test (a^(p-1) mod p) = 14
+Result of Fermat test (a^(p-1) mod p) = 34
+Prime Candidate p = 21 77 65 55 43 6 4 68 
+(current chance of primality: 0.00000000)
+p failed one or more Fermat tests. Rerolling a new p...
+Random p:
+p = 34 57 65 69 73 33 22 87 
+After fixing leading zeros of p
+p = 34 57 65 69 73 33 22 87 
+Now checking if p is divisible by 2
+p is divisible by 2!
+Adding a to p to correct! a = 1 
+New p: p = 35 57 65 69 73 33 22 87 
+Now checking if p is divisible by 3
+p is divisible by 3!
+Adding a to p to correct! a = 2 
+New p: p = 37 57 65 69 73 33 22 87 
+Now checking if p is divisible by 5
+Now checking if p is divisible by 7
+Now checking if p is divisible by 11
+Now checking if p is divisible by 13
+Now checking if p is divisible by 17
+Now checking if p is divisible by 19
+Now checking if p is divisible by 23
+Now checking if p is divisible by 29
+Now checking if p is divisible by 31
+Now checking if p is divisible by 37
+Now checking if p is divisible by 41
+Now checking if p is divisible by 43
+Now checking if p is divisible by 47
+Now checking if p is divisible by 53
+Now checking if p is divisible by 59
+Now checking if p is divisible by 61
+Now checking if p is divisible by 67
+Now checking if p is divisible by 71
+Now checking if p is divisible by 73
+Now checking if p is divisible by 79
+Now checking if p is divisible by 83
+Now checking if p is divisible by 89
+Now checking if p is divisible by 97
+Now beginning primality tests...
+Fermat test with a = 6 9 10 11 11 6 4 13 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 37 57 65 69 73 33 22 87 
+(current chance of primality: 0.50000000)
+Fermat test with a = 13 20 23 24 26 12 9 30 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 37 57 65 69 73 33 22 87 
+(current chance of primality: 0.75000000)
+Fermat test with a = 26 41 46 49 52 24 17 62 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 37 57 65 69 73 33 22 87 
+(current chance of primality: 0.87500000)
+Fermat test with a = 11 17 19 21 22 11 8 25 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 37 57 65 69 73 33 22 87 
+(current chance of primality: 0.93750000)
+Fermat test with a = 36 57 64 68 72 33 23 86 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 37 57 65 69 73 33 22 87 
+(current chance of primality: 0.96875000)
+Fermat test with a = 36 56 64 68 71 33 23 85 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 37 57 65 69 73 33 22 87 
+(current chance of primality: 0.98437500)
+Fermat test with a = 33 51 57 61 64 30 20 76 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 37 57 65 69 73 33 22 87 
+(current chance of primality: 0.99218750)
+Fermat test with a = 18 28 31 33 35 17 12 41 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 37 57 65 69 73 33 22 87 
+(current chance of primality: 0.99609375)
+Fermat test with a = 13 20 23 24 25 12 9 30 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 37 57 65 69 73 33 22 87 
+(current chance of primality: 0.99804688)
+Fermat test with a = 31 49 56 59 62 29 20 74 
+Result of Fermat test (a^(p-1) mod p) = 1
+Prime Candidate p = 37 57 65 69 73 33 22 87 
+(current chance of primality: 0.99902344)
+Passed all primality tests!
+
+pub = 
+
+    [1x16 double]
+    [1x5  double]
+
+
+priv = 
+
+    [1x16 double]
+    [1x16 double]
+
+N =
+
+    82    34    87    10    68    51    36    24    83    20     2    32    17    67    47    33
+
+
+c =
+
+    19    80    34    22     4
+
+
+d =
+
+    59    86    76     1    55    27    67    36    14    28    41    33    44    76    32    10
+
+
+e =
+
+    77    81    91    58    75    29    92    16     9    31    21    32    80    84    11     3     1
+
+
+m =
+
+    52    72    73    83     0    73    83     0    65     0    52    69    83    84     1     1     1
+
+
+ans =
+
+This is a Test!!!
