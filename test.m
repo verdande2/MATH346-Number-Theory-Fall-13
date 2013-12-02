@@ -59,7 +59,7 @@ asserteq(   carry([-1 -2 -3 -4 -5], 10),[-1 -2 -3 -4 -5],   'No carry needed for
 %BigGCD([2 6 7], [8 1 6], 10)
 %BigGCD([1 1 1], [9 6], 10)
 
-BigPrime(3, 10)
+%BigPrime(3, 10)
 
 %[q,r]=BigDiv(Int2BigInt(654321, 10), Int2BigInt(123, 10), 10)
 
@@ -97,6 +97,12 @@ BigPrime(3, 10)
 %BigComp([5 5 9], [1 2 9], 10) % 1
 %t = [25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25];
 %BigPrint(t);
+
+[pub, priv] = GenerateKeyPair(3)
+e = RSAEncrypt('test', pub)
+m = RSADecrypt(e, priv)
+
+
 
 profile off
 %profile viewer

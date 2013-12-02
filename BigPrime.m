@@ -10,7 +10,7 @@ function [ p ] = BigPrime( n, b, debug)
     
     % configurable settings here
     num_a = 10; % ie. chance of being composite = 1/2^50 ~= 8 *10^-16
-    p_check_max = 15;
+    p_check_max = 100;
 
     rng 'shuffle' twister;
     
@@ -66,7 +66,7 @@ function [ p ] = BigPrime( n, b, debug)
                 debug && fprintf('New p: ');
                 debug && BigPrint(p);
             end
-            a = BigMult(a,p_list(i),10);
+            a = BigMult(a,Int2BigInt(p_list(i), b),b);
         end
         
         debug && fprintf('Now beginning primality tests...\n');
