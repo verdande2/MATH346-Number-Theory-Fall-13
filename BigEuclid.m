@@ -7,8 +7,12 @@ function [ k, l ] = BigEuclid( n, m, b )
         n = t;
     end
 
-    kv = [0 1 0];
-    lv = [1 0 0];
+    k1 = 0;
+    k2 = [1];
+    k3 = 0;
+    l1 = [1];
+    l2 = 0;
+    l3 = 0;
 
     r = 1; % remainder
 
@@ -16,20 +20,20 @@ function [ k, l ] = BigEuclid( n, m, b )
         [q, r] = BigDiv(n,m,b);
 
         % compute k,l
-        kv(3) = kv(1) - q*kv(2);
-        lv(3) = lv(1) - q*lv(2);
+        k3 = BigAdd(k1, -BigMult(q, k2, b), b);
+        l3 = BigAdd(l1, -BigMult(q, l2, b), b);
 
         % shift k,l left once
-        kv(1) = kv(2); lv(1) = lv(2);
-        kv(2) = kv(3); lv(2) = lv(3);
+        k1 = k2; l1 = l2;
+        k2 = k3; l2 = l3;
 
         % use Euclid's theorem here to calculate next k,l
         n = m;
         m = r;
     end
 
-    k = kv(1);
-    l = lv(1);
+    k = k1;
+    l = l1;
 
 end
 

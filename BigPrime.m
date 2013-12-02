@@ -28,7 +28,6 @@ function [ p ] = BigPrime( n, b, debug)
 
     while prime == false
         prob_not_prime = 1;
-        tested_a = 0;
         
         p = floor(b*rand(1, n)); % shouldn't need to carry this, as all digits generated are between 0-(b-1)
 
@@ -72,6 +71,8 @@ function [ p ] = BigPrime( n, b, debug)
         debug && fprintf('Now beginning primality tests...\n');
         
         prime = true; % assume p is prime initially
+        
+        tested_a = 0;
         while prime == true && tested_a < num_a % working under the assumption p is prime until failing Fermat's test
             % perform the Fermat primality test
             

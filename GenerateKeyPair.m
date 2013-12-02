@@ -11,6 +11,7 @@ rng 'shuffle' twister;
 while length(p) ~= n
     p = BigPrime(n, b);
 end
+
 while length(q) ~= n
     q = BigPrime(n, b);
 end

@@ -98,11 +98,11 @@ asserteq(   carry([-1 -2 -3 -4 -5], 10),[-1 -2 -3 -4 -5],   'No carry needed for
 %t = [25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25];
 %BigPrint(t);
 
-[pub, priv] = GenerateKeyPair(3)
+[pub, priv] = GenerateKeyPair(8)
 e = RSAEncrypt('test', pub)
 m = RSADecrypt(e, priv)
 
-
+BigInt2String(m)
 
 profile off
 %profile viewer
