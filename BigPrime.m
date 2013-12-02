@@ -12,6 +12,7 @@ function [ p ] = BigPrime( n, b, debug)
     num_a = 10; % ie. chance of being composite = 1/2^50 ~= 8 *10^-16
     p_check_max = 15;
 
+    rng 'shuffle' twister;
     
     debug && fprintf('Seeking a big prime %d-digits long in base %d with certainty %0.8f (%d primality test trials)...\n',n,b,1-(1/2^num_a), num_a);
     
@@ -27,6 +28,8 @@ function [ p ] = BigPrime( n, b, debug)
 
     while prime == false
         prob_not_prime = 1;
+        tested_a = 0;
+        
         p = floor(b*rand(1, n)); % shouldn't need to carry this, as all digits generated are between 0-(b-1)
 
         debug && fprintf('Random p:\n');
@@ -53,7 +56,7 @@ function [ p ] = BigPrime( n, b, debug)
         a = 1;
         for i = 1 : lp 
             fprintf('Now checking if p is divisible by %d\n', p_list(i))
-            if BigMod(p, p_list(i), b) == 0
+            if BigMod(p, Int2BigInt(p_list(i), b), b) == 0
                 debug && fprintf('p is divisible by %d!\n', p_list(i));
                 debug && fprintf('Adding a to p to correct! ');
                 debug && BigPrint(a);
@@ -69,7 +72,7 @@ function [ p ] = BigPrime( n, b, debug)
         debug && fprintf('Now beginning primality tests...\n');
         
         prime = true; % assume p is prime initially
-        while prime == true && length(a_list) <= num_a % working under the assumption p is prime until failing Fermat's test
+        while prime == true && tested_a < num_a % working under the assumption p is prime until failing Fermat's test
             % perform the Fermat primality test
             
             % pick a random integer in (1, n-1]
@@ -83,12 +86,14 @@ function [ p ] = BigPrime( n, b, debug)
 %                 error('Ran out of candidate ''a''s!');
 %             end
             
-            while ismember(a, a_list, 'rows') 
-                a = ceil(1 + (p1)*rand(1,1));
-                a = carry(a, b); % fix a if needed
-            end
+%             while ismember(a, a_list, 'rows') 
+%                 debug && BigPrint(a);
+%                 debug && fprintf(' appears to have already been tested!');
+%                 a = ceil(1 + (p1)*rand(1,1));
+%                 a = carry(a, b); % fix a if needed
+%             end
             
-            a_list = [a_list; a]; % add a to the list of numbers we're tried in the primality test
+%            a_list = [a_list; a]; % add a to the list of numbers we're tried in the primality test
                 
             
             debug && fprintf('Fermat test with ');
@@ -106,6 +111,7 @@ function [ p ] = BigPrime( n, b, debug)
                 prime = false;
                 prob_not_prime = 1;
             end
+            tested_a = tested_a + 1;
 
             prob_prime = 1 - prob_not_prime;
 

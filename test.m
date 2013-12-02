@@ -59,11 +59,11 @@ asserteq(   carry([-1 -2 -3 -4 -5], 10),[-1 -2 -3 -4 -5],   'No carry needed for
 %BigGCD([2 6 7], [8 1 6], 10)
 %BigGCD([1 1 1], [9 6], 10)
 
-%BigPrime(2, 10)
+BigPrime(3, 10)
 
 %[q,r]=BigDiv(Int2BigInt(654321, 10), Int2BigInt(123, 10), 10)
 
-BigExp(Int2BigInt(34,10), Int2BigInt(46,10), Int2BigInt(47,10), 10)
+%BigExp(Int2BigInt(34,10), Int2BigInt(46,10), Int2BigInt(47,10), 10)
 
 %BigExp([7 6], [8 7], [9 7], 10)
 %BigMod(Int2BigInt(123456789,10), Int2BigInt(123456, 10), 10)

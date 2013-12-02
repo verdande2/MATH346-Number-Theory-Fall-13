@@ -9,7 +9,8 @@ function [ a ] = BigExp( m, c, N, b )
         if BigComp(r, 1, b) == 'e' % if r == 1
             a = BigMult(m, a, b); % ans *= m
             a = BigMod(a, N, b); % ans = mod(ans, N)
-        elseif BigComp(c, 0, b) ~= 'e' % if c~=0
+        end
+        if BigComp(c, 0, b) ~= 'e' % if c~=0
             m = BigMult(m, m, b); % m = m^2 "power of 2" part here
             m = BigMod(m, N, b); % m = mod(m, N)
         end
