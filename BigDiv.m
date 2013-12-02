@@ -20,43 +20,50 @@ function [ q, r ] = BigDiv( n, d, b )
 %         
 %     else
         
-    if BigComp(n,d,b) ~= 'e'
+    if BigComp(n,d,b) == 'e'
+        % special case for if n==d
+        q = 1;
+        r = 0;
+    else
+        
         % quickly and sloppily allocate q
         q = zeros(1, length(n)); % the leading zeros will be trimmed later
         while BigComp(n, d, b) == 'm'
 
             ln = length(n);
             ld = length(d);
-            guess = floor(n(ln)/d(ld));
-
-            digits = 1;
+            
+            guess = floor(n(end) / d(end));
             
             % guessing is a pain in the ass
-            while guess==0
-                [guess, r] = BigDiv(n(end-digits+1:end), d, b);
+            if guess==0
+                guess = floor( (n(end)*b + n(end-1)) / d(end) ); % takes another digit of n, should always be >0
                 ln = ln - 1;
-                digits = digits + 1;
             end
 
 
 
             sub = [zeros(1, ln-ld) carry(guess*d, b)];
 
+            % in the case we've guessed too high
             while BigComp(n, sub, b) == 'l'
                 guess = guess - 1;
+                
+                if guess == 0
+                    guess = floor( (n(end)*b + n(end-1)) / d(end) ); % takes another digit of n, should always be >0
+                    ln = ln - 1;
+                end
+                
                 sub = [zeros(1, ln-ld) carry(guess*d, b)];
             end
 
             n = BigAdd(n, -sub, b);
             n = carry(n, b);
 
-            q(ln-ld+1) = guess;
+            q(ln-ld+1) = q(ln-ld+1) + guess;
         end
 
         r = n; % just for readability's sake
         q = carry(q, b);
-    else
-        q = 1;
-        r = 0;
     end
 end
