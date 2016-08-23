@@ -1,6 +1,8 @@
 function [ k, l ] = BigEuclid( n, m, b )
 % solves for k,l in k*n + l*m = gcd(n,m)
 
+
+    % ensure that n>m
     if BigComp(n,m,b) == 'l'
         t = m;
         m = n;

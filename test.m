@@ -98,11 +98,44 @@ asserteq(   carry([-1 -2 -3 -4 -5], 10),[-1 -2 -3 -4 -5],   'No carry needed for
 %t = [25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25];
 %BigPrint(t);
 
-[pub, priv] = GenerateKeyPair(8)
-e = RSAEncrypt('This is a Test!!!', pub)
-m = RSADecrypt(e, priv)
+% test case broken into pieces, ie. why does only the last bit translate
+% over?!?
+% m = [52    72    73    83     0    73    83     0    65     0    82    69    65    76    76    89     0    82    69    65    76    76    89     0    82    69    65    76    76    89     0    82    69    65    76    76    89     0    76    79    78    71     0    52    69    83    84     1     1     1];
+% 
+% N = [81    28    73    33    58    16    34    21    85    20    85    83    71    53    55    17];
+% c = [54    36    34    87    22];
+% d = [24    20    39    27    46    60     5    85    41    55    84     3    39     6    72     3];
+% 
+% pub = {N; c};
+% priv = {N; d};
+% 
+% e = [];
+% 
+% ms = vec2mat(m, length(N));
+% for r = 1:size(ms,1)
+%     fprintf('Encrypting: ''%s'' \n', BigInt2String(ms(r,:)));
+%     e = [e RSAEncrypt(ms(r,:), pub)]
+% end
+% 
+% e
+% 
+% es = vec2mat(e, length(N));
+% for r = 1:size(es,1)
+%     fprintf('Decrypting ''%s'' \n', BigInt2String(es(r,:)));
+%     m_decrpyted = BigInt2String(RSAEncrypt(es(r,:), pub))
+% end
 
-BigInt2String(m)
+N = [2    83    51    10    21    71    86    69    69    25    14    50    31     6    60    78    19    14    76    22    69    46    81    25    67    69    46    75    86    10    78     6];
+c = [5    55    89    23    45     2    79    80     9    54    12    26    74    63     3     8];
+d = [30     8    85    17    14    21    89    29    21    49    27    51    58    26    53    65    87    30    44    41    17    70    43    34    93    22    86    24    87     2     9     1];
+%RSAEncrypt(String
+N = '2_Lupq''4JWux9-n4KiF5`-/#tU:`&-ezr*hS[lI@k`0-.:`oy)';
+c = 'OU1>dT-DEV!Vx*e|Yd<K$DB;m';
+
+randall_pub = {String2BigInt(N); String2BigInt(c)};
+
+encrypted_to_send_to_randall = BigInt2String(RSAEncrypt(String2BigInt('answer here'), randall_pub))
+
 
 profile off
 %profile viewer

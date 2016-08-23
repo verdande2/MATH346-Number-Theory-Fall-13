@@ -9,7 +9,7 @@ d = priv_key(2);
 d = cell2mat(d);
 
 m = [];
-es = vec2mat(e, length(N));
+es = vec2mat(e, length(N)-1);
 
 for i = 1:size(es,1)
     m = [m BigExp(es(i,:), d, N, 95)]; % note 95 hardcoded

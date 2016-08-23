@@ -78,8 +78,12 @@ function [ p ] = BigPrime( n, b, debug)
             
             % pick a random integer in (1, n-1]
             p1 = BigAdd(p, -1, b);
-            a = ceil(1 + (p1)*rand(1,1));
-            a = carry(a, b); % fix a if needed
+            
+            a = 0;
+            while BigComp(a, 2, b) == 'l' || BigComp(a, p, b) == 'm'
+                a = randi(b-1, 1, length(p));
+                a = carry(a, b); % fix a if needed
+            end
             
             
 %             if length(a_list) == BigInt2Int(p1, b) % if number of numbers we've tried is = p, then we can't try any more without duplicates

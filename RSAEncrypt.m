@@ -1,4 +1,4 @@
-function [ e ] = RSAEncrypt( str, pub_key)
+function [ e ] = RSAEncrypt( m, pub_key)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -7,8 +7,6 @@ N = cell2mat(N);
 
 c = pub_key(2);
 c = cell2mat(c);
-
-m = String2BigInt(str);
 
 
 e = [];
